@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Dead Mile</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=chakra+petch:wght@500;600;700&family=Pirata+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <canvas id="game" aria-label="Game view"></canvas>
+
+        <div id="hud" hidden>
+            <div class="hud-tl panel">
+                <div class="hp"><div class="bar" role="progressbar" aria-label="Health"><i id="hpFill"></i></div><b id="hpNum">100</b></div>
+                <div class="row"><span class="sep"></span><span>Kills</span><b id="killNum">0</b></div>
+                <div class="row" id ="livesRow" hidden><span>Extra lives</span><b id="lifeNum">0</b></div>
+            </div>
+            <div class="hud-tr">
+                <div class="panel stats"><span>Distance</span><b id="distnum">0</b><span>Time</span><b id="timeNum">0:00</b></div>
+                <div class="btns">
+                    <button id="shopBtn" class="btn icon" type="button" title="Shop (B)" aria-label="Shop">🛒</button>
+                    <button id="pauseBtn" class="btn icon" type="button" title="Pause (P)" aria-label="Pause">⏸</button>
+                    <button id="muteBtn" class="btn icon" type="button" title="Mute sound" aria-pressed="false">🔊</button>
+                </div>
+            </div>
+            <div id="toast" role="status" aria-live="polite"></div>
+            <div id="loadout" class="panel">
+                <div class="gunrow">
+                    <button id="gunPrev" class="btn icon" type="button" aria-label="Previous gun" title="Previous gun(Q)">&lsaquo;</button>
+                    <span id="gunName">Rusty pistol</span>
+                    <button id="gunNext" class="btn icon" type="button" aria-label="Next gun (E)">&rsaquo;</button>
+                    <button id="nadeBtn" class="btn icon" type="button" aria-label="Throw grenade" title="Throw grenade (G)">💣 <b id="nadeNum">3</b></button>
+                </div>
+                <div id="energyRow"></div>
+            </div>
+        </div>
+
+        <section id="title" class="overlay">
+            <div class="card">
+                <h1>Dead Mile</h1>
+                <p class="lede">Walk as far as you can. Shoot what comes for you, collect what it drops, and spend it on better guns and gear.</p>
+                <div class="controls">
+                    <div><h3>Keyboard and mouse</h3><p>W A S D to move. Aim with the mouse and hold click to shoot. Keys 1 to 6 pick an energy type, Q and E swap guns, G throws a grenade, B opens the shop, P pauses.</p></div>
+                    
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
